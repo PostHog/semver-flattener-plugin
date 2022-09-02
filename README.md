@@ -6,7 +6,7 @@ It is common to want to compare versions when filtering in insights.
 
 > Show me events where `app_version < 22.7`
 
-It isn't possible to (correctly) use string comparison for this because then several comparisons don't work. Amusingly `apples < banana` but `apples > BANANA`. Importantly 22.7 is less than 22.7-beta which would be wrong.
+It isn't possible to (correctly) use string comparison for this because then several comparisons don't work. Amusingly `apples < banana` but `apples > BANANA`. Importantly `22.7` is less than `22.7-beta` which would be wrong.
 
 This plugin splits a valid SemVer version string into 
 

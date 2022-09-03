@@ -38,8 +38,10 @@ export function processEvent(event: PluginEvent, meta: PluginMeta<SemVerFlattene
 
     for (const target of targetProperties) {
         const candidate = event.properties[target]
-        console.log('found candidate property: ', target, ' matches ', candidate)
+
         if (candidate) {
+            console.debug('found candidate property: ', target, ' matches ', candidate)
+
             const { major, minor, patch, preRelease, build } = splitVersion(candidate)
             event.properties[`${target}__major`] = major
             event.properties[`${target}__minor`] = minor
